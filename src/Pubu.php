@@ -3,6 +3,7 @@
 namespace lxpgw\logger;
 
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\base\Object;
 use yii\helpers\Json;
 
@@ -23,6 +24,18 @@ class Pubu extends Object
      * @var string The target remote url send message to.
      */
     public $remote;
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        parent::init();
+
+        if (is_null($this->remote)) {
+            throw new InvalidConfigException('$remote must be set.');
+        }
+    }
 
     /**
      * @param null|string $text
@@ -51,7 +64,7 @@ class Pubu extends Object
     private function getPayload($text, $attachments)
     {
         if ($text == null) {
-            $text = Yii::$app->name;
+            $text = __CLASS__ . '::' . date('Y-m-d H:i');
         }
         $payload = [
             'text' => $text,

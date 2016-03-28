@@ -1,10 +1,10 @@
-Skeleton
+Logger
 ========
-[![Build Status](https://img.shields.io/travis/lichunqiang/skeleton.svg?style=flat-square)](http://travis-ci.org/lichunqiang/skeleton)
-[![version](https://img.shields.io/packagist/v/light/skeleton.svg?style=flat-square)](https://packagist.org/packages/light/skeleton)
-[![Download](https://img.shields.io/packagist/dt/light/skeleton.svg?style=flat-square)](https://packagist.org/packages/light/skeleton)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lichunqiang/skeleton.svg?style=flat-square)](https://scrutinizer-ci.com/g/lichunqiang/skeleton)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lichunqiang/skeleton.svg?style=flat-square)](https://scrutinizer-ci.com/g/lichunqiang/skeleton)
+[![Build Status](https://img.shields.io/travis/lichunqiang/logger.svg?style=flat-square)](http://travis-ci.org/lichunqiang/logger)
+[![version](https://img.shields.io/packagist/v/lxpgw/logger.svg?style=flat-square)](https://packagist.org/packages/lxpgw/logger)
+[![Download](https://img.shields.io/packagist/dt/lxpgw/logger.svg?style=flat-square)](https://packagist.org/packages/lxpgw/logger)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lichunqiang/logger.svg?style=flat-square)](https://scrutinizer-ci.com/g/lichunqiang/logger)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lichunqiang/logger.svg?style=flat-square)](https://scrutinizer-ci.com/g/lichunqiang/logger)
 [![Contact](https://img.shields.io/badge/weibo-@chunqiang-blue.svg?style=flat-square)](http://weibo.com/chunqiang)
 
 
@@ -16,13 +16,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist light/skeleton "~1.0.0"
+php composer.phar require --prefer-dist lxpgw/logger "~1.0.0"
 ```
 
 or add
 
 ```
-"light/skeleton": "~1.0.0"
+"lxpgw/logger": "~1.0.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -30,9 +30,31 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
+### send message directly
+
 ```
-$skeleton = new \light\skeleton\Skeleton();
-$skeleton->run();
+$pubu = new \lxpgw\logger\Pubu(['remote' => 'your pubu.im service url']);
+$logger->send('Hello');
+
+//with attachments
+$pubu->send('Hello', [
+    ['title' => 'This is title', 'description' => 'This is description.']
+]);
+```
+
+### with the `log` component
+
+```
+[
+    'log' => [
+        'targets' => [
+            'class' => \lxpgw\logger\LogTarget,
+            'chanel' => 'the pubu.im service url', // Config the channel you want send to.
+            'exportInterval' => 1, //send per message directly
+            'logVars' => [],
+        ]
+    ]
+]
 ```
 
 

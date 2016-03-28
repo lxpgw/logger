@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpunit colors="false"
-         bootstrap='vendor/autoload.php'>
+         bootstrap='tests/bootstrap.php'>
     <testsuites>
         <testsuite name="All">
             <directory suffix="Test.php">tests</directory>
@@ -20,4 +20,7 @@
             </exclude>
         </whitelist>
     </filter>
+    <php>
+        <const name="REMOTE" value="https://hooks.pubu.im/services/dbwxzkq6qvy9f6z" />
+    </php>
 </phpunit>
