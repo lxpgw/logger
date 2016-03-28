@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the lxpgw/logger.
+ *
+ * (c) lichunqiang <light-li@hotmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace lxpgw\logger;
 
 use Yii;
@@ -19,9 +28,10 @@ use yii\log\Target;
  *          ]
  *      ]
  * ]
- * ~~~
+ * ~~~.
  *
  * @version 0.0.0
+ *
  * @author lichunqaing <light-li@hotmail.com>
  */
 class LogTarget extends Target
@@ -40,7 +50,7 @@ class LogTarget extends Target
     public $robot;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -68,7 +78,7 @@ class LogTarget extends Target
      *     'url' => 'http://www.baidu.com',
      *     'color' => 'success'
      * ]
-     * ~~~
+     * ~~~.
      *
      * @return array
      */
@@ -83,11 +93,12 @@ class LogTarget extends Target
             ];
             $attachments[] = $attachment;
         }
+
         return $attachments;
     }
 
     /**
-     * @param integer $level
+     * @param int $level
      *
      * @return string
      */
@@ -103,6 +114,7 @@ class LogTarget extends Target
         if (!isset($colors[$level])) {
             return 'success';
         }
+
         return $colors[$level];
     }
 }

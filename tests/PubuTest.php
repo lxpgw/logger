@@ -1,10 +1,19 @@
 <?php
 
+/*
+ * This file is part of the lxpgw/logger.
+ *
+ * (c) lichunqiang <light-li@hotmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace light\logger;
 
 use lxpgw\logger\Pubu;
 
-class SkeletonTest extends \PHPUnit_Framework_TestCase
+class PubuTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @expectedException \yii\base\InvalidConfigException
@@ -26,7 +35,7 @@ class SkeletonTest extends \PHPUnit_Framework_TestCase
     public function testSendDefaultText()
     {
         $instance = new Pubu([
-            'remote' => REMOTE
+            'remote' => REMOTE,
         ]);
         $instance->send();
     }

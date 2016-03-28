@@ -1,8 +1,16 @@
 <?php
 
+/*
+ * This file is part of the lxpgw/logger.
+ *
+ * (c) lichunqiang <light-li@hotmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace lxpgw\logger;
 
-use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Object;
 use yii\helpers\Json;
@@ -16,6 +24,7 @@ use yii\helpers\Json;
  * ~~~
  *
  * @version 0.0.0
+ *
  * @author lichunqaing <light-li@hotmail.com>
  */
 class Pubu extends Object
@@ -26,7 +35,7 @@ class Pubu extends Object
     public $remote;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -39,7 +48,7 @@ class Pubu extends Object
 
     /**
      * @param null|string $text
-     * @param array $attachments
+     * @param array       $attachments
      *
      * @return string
      */
@@ -52,12 +61,13 @@ class Pubu extends Object
                 'content' => Json::encode($this->getPayload($text, $attachments)),
             ],
         ]);
+
         return file_get_contents($this->remote, false, $context);
     }
 
     /**
      * @param string $text
-     * @param array $attachments
+     * @param array  $attachments
      *
      * @return array
      */
@@ -74,7 +84,7 @@ class Pubu extends Object
             //    'avatarUrl' => 'https://dn-facecdn.qbox.me/assets/1602030042/img/logo-sm.png'
             //]
         ];
+
         return $payload;
     }
 }
-
