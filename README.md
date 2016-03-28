@@ -1,10 +1,10 @@
 Logger
 ========
-[![Build Status](https://img.shields.io/travis/lichunqiang/logger.svg?style=flat-square)](http://travis-ci.org/lichunqiang/logger)
+[![Build Status](https://img.shields.io/travis/lxpgw/logger.svg?style=flat-square)](http://travis-ci.org/lxpgw/logger)
 [![version](https://img.shields.io/packagist/v/lxpgw/logger.svg?style=flat-square)](https://packagist.org/packages/lxpgw/logger)
 [![Download](https://img.shields.io/packagist/dt/lxpgw/logger.svg?style=flat-square)](https://packagist.org/packages/lxpgw/logger)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lichunqiang/logger.svg?style=flat-square)](https://scrutinizer-ci.com/g/lichunqiang/logger)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lichunqiang/logger.svg?style=flat-square)](https://scrutinizer-ci.com/g/lichunqiang/logger)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lxpgw/logger.svg?style=flat-square)](https://scrutinizer-ci.com/g/lxpgw/logger)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lxpgw/logger.svg?style=flat-square)](https://scrutinizer-ci.com/g/lxpgw/logger)
 [![Contact](https://img.shields.io/badge/weibo-@chunqiang-blue.svg?style=flat-square)](http://weibo.com/chunqiang)
 
 
