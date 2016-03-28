@@ -1,0 +1,38 @@
+{
+  "name": "lxpgw/logger",
+  "description": "Send log via pubu.im",
+  "keywords": [
+    "logger",
+    "pubu"
+  ],
+  "homepage": "https://github.com/lxpgw/logger",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "lichunqiang",
+      "email": "light-li@hotmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "lxpgw\\logger\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "light\\logger\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": [
+      "php ./vendor/bin/phpunit"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  }
+}
